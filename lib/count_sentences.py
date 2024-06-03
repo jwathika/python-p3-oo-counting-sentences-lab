@@ -23,6 +23,25 @@ class MyString:
         else:
             return False
 
+    def is_question(self):
+        if self.__value.endswith("?"):
+            return True
+        else:
+            return False
+
+    def is_exclamation(self):
+        if self.__value.endswith("!"):
+            return True
+        else:
+            return False
+
+    def count_sentences(self):
+        for character in ["!", "?"]:
+            value = self.value.replace(character, ".")
+
+        sentences = [single for single in value.split(".") if single]
+        return len(sentences)
+
 
 # value = MyString()
 # value.value = 123
